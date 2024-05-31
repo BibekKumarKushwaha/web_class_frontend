@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { createProductApi, getAllProducts } from '../../apis/Api'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
  
 const AdminDashboard=() => {
     //1.state for all fetched products
@@ -157,7 +158,7 @@ const AdminDashboard=() => {
                             <td>{singleProduct.productDescription}</td>
  
                             <td>
-                                <button className='btn btn-primary'>Edit</button>
+                                <Link to={`/admin/update/${singleProduct._id}`} className='btn btn-primary'>Edit</Link>
                                 <button className='btn btn-danger ms-2'>Delete</button>
                             </td>
                         </tr>
@@ -173,3 +174,10 @@ const AdminDashboard=() => {
 }
  
 export default AdminDashboard
+
+//edit product
+//admin dashbaord
+//make a route (admin edit product)
+//fill all the related information only 
+//edit garna milnu paryo (text,file)
+//make a backend to update product 
